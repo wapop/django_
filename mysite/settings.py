@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-
+TEMPLATES_DIRS = [os.path.join(BASE_DIR, 'templates')]
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
@@ -127,3 +129,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50
