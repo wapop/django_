@@ -25,7 +25,7 @@ SECRET_KEY = '%oqu+l8xs5+w)(=c5^h-_oy3zii9rwsc_cb6bz(o4y(jak8z1@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1' , 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,10 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookmark.apps.BookmarkConfig',
-    'blog.apps.BlogConfig',
+
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
+    'bookmark.apps.BookmarkConfig',
+    'blog.apps.BlogConfig',
+    'photo.apps.PhotoConfig',
+    'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
@@ -132,3 +136,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
+
+DISQUS_SHORTNAME = 'pydjango-web'
+DISQUS_MY_DOMAIN = 'http://192.168.56.101:8000'
+
+#LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL ='/'
